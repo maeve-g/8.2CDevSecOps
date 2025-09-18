@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Goof - Snyk's vulnerable demo app
 [![Known Vulnerabilities](https://snyk.io/test/github/snyk/goof/badge.svg?style=flat-square)](https://snyk.io/test/github/snyk/goof)
 
@@ -212,3 +213,6 @@ snyk wizard
 
 In this application, the default `snyk wizard` answers will fix all the issues.
 When the wizard is done, restart the application and run the exploits again to confirm they are fixed.
+=======
+# 8.2CDevSecOp
+>>>>>>> ea417e2dd019ec0fef0313ef0b9c1ad7c95ae026
