@@ -44,6 +44,8 @@ pipeline {
       post {
         always {
           emailext(
+            from: 'maevegunstone@gmail.com',
+            replyTo: 'maevegunstone@gmail.com',
             to: 'maevegunstone@gmail.com',
             subject: "Security Scan - ${currentBuild.currentResult}",
             body: "The Security Scan stage finished with status: ${currentBuild.currentResult}",
