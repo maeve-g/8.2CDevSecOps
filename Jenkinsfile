@@ -13,7 +13,7 @@ pipeline {
     }
     stage('Run Tests') {
       steps {
-        sh 'npm test || true'  // continue despite test failures
+        sh 'npm test || true'  
       }
     }
     stage('Generate Coverage Report') {
