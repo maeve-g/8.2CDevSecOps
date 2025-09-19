@@ -15,6 +15,16 @@ pipeline {
       steps {
         sh 'npm test || true'  
       }
+      post {
+        always {
+          emailext(
+            to: 's222237672@deakin.edu.au',
+            subject: "Run Tests - ${currentBuild.currentResult}",
+            body: "The Run Tests stage has finished with status: ${currentBuild.currentResult}",
+            attachLog: true
+          )
+        }
+      }
     }
     stage('Generate Coverage Report') {
       steps {
@@ -24,6 +34,16 @@ pipeline {
     stage('NPM Audit (Security Scan)') {
       steps {
         sh 'npm audit || true'
+      }
+      post {
+        always {
+          emailext(
+            to: 's222237672@deakin.edu.au', 
+            subject: "Security Scan - ${currentBuild.currentResult}",
+            body: "The Security Scan stage has finished with status: ${currentBuild.currentResult}",
+            attachLog: true
+          )
+        }
       }
     }
   }
